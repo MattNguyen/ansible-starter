@@ -1,0 +1,11 @@
+---
+# RVM
+- name: install rvm
+  shell: \curl -L https://get.rvm.io | bash -s stable --autolibs=3 creates=~/.rvm
+
+- name: install dependencices
+  shell: executable=/bin/bash source /etc/profile.d/rvm.sh; rvm requirements
+
+# Ruby
+- name: install ruby
+  shell: executable=/bin/bash source /etc/profile.d/rvm.sh; rvm install --default "{{ ruby_version }}"

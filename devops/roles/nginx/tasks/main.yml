@@ -1,0 +1,8 @@
+- name: add nginx latest version ppa
+  action: apt_repository repo=ppa:nginx/stable
+
+- name: update apt
+  command: sudo apt-get update
+
+- name: install nginx
+  action: apt name=nginx

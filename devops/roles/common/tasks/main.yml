@@ -1,0 +1,9 @@
+---
+- name: update apt
+  action: apt update_cache=yes
+  sudo: true
+
+- name: install essential packages
+  action: apt pkg={{ item }} state=installed update_cache=yes
+  sudo: true
+  with_items: common_essential_packages
